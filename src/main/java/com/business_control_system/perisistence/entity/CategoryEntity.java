@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "categories")
 @Getter
@@ -22,4 +24,7 @@ public class CategoryEntity {
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
+
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    private List<ProductEntity> products;
 }

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 @Getter
@@ -28,4 +30,17 @@ public class UserEntity {
 
     @Column(nullable = false)
     private Boolean status;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
+    private RoleEntity role;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<OrderEntity> orders;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<TicketEntity> tickets;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<NotificationEntity> notifications;
 }

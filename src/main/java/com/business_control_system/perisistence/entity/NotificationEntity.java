@@ -25,4 +25,8 @@ public class NotificationEntity {
 
     @Column(nullable = false, name = "is_read")
     private Boolean isRead;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserEntity user;
 }

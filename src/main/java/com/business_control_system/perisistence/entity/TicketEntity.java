@@ -24,4 +24,8 @@ public class TicketEntity {
 
     @Column(nullable = false, length = 50)
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserEntity user;
 }

@@ -22,4 +22,8 @@ public class PaymentEntity {
 
     @Column(nullable = false, length = 50)
     private String status;
+
+    @OneToOne
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    private OrderEntity order;
 }

@@ -22,4 +22,12 @@ public class OrderItemEntity {
 
     @Column(nullable = false, columnDefinition = "NUMERIC(10,2)")
     private Double price;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    private OrderEntity order;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    private ProductEntity product;
 }
