@@ -1,10 +1,10 @@
 package com.business_control_system.perisistence.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
+@AllArgsConstructor
 @Entity
 @Table(name = "products")
 @Getter
