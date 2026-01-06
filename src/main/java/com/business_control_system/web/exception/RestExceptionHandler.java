@@ -1,6 +1,7 @@
 package com.business_control_system.web.exception;
 
 import com.business_control_system.domain.NotFoundException;
+import com.business_control_system.domain.exception.AlreadyExistsException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -27,5 +28,11 @@ public class RestExceptionHandler {
         });
 
         return ResponseEntity.badRequest().body(errors);
+    }
+
+    @ExceptionHandler(AlreadyExistsException.class)
+    public ResponseEntity<Error> handleException(AlreadyExistsException exception){
+        Error error = new Error("already-exists",exception.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(error);
     }
 }
