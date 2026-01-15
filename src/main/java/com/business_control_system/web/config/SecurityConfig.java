@@ -32,6 +32,9 @@ public class SecurityConfig {
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET,"/products/all").permitAll()
                         .requestMatchers(HttpMethod.GET,"/products/get/*").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/categories").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/categories/*").permitAll()
+                        .requestMatchers("/categories/**").hasRole("ADMIN")
                         .anyRequest().authenticated();
                 })
                 .csrf(AbstractHttpConfigurer::disable)
