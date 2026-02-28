@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: business-control-system
+  profiles:
+    active: dev
