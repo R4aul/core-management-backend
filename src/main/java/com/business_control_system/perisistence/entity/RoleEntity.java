@@ -25,7 +25,7 @@ public class RoleEntity {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "role_permissions",
             joinColumns = @JoinColumn(name = "role_id"),

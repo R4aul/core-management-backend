@@ -1,9 +1,9 @@
 package com.business_control_system.domain.repository;
 
-import com.business_control_system.domain.dto.AuthUser;
+import com.business_control_system.perisistence.entity.UserEntity;
 
 import java.util.Optional;
 
 public interface SecurityRepository {
-    Optional<AuthUser> getByEmail(String email);
+    Optional<UserEntity> getByEmail(String email);
 }
