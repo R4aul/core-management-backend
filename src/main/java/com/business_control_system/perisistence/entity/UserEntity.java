@@ -33,7 +33,7 @@ public class UserEntity {
     @Column(nullable = false)
     private Boolean status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
     private RoleEntity role;
 
