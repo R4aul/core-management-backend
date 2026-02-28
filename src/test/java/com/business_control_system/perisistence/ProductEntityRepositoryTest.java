@@ -1,6 +1,5 @@
 package com.business_control_system.perisistence;
 
-import com.business_control_system.domain.NotFoundException;
 import com.business_control_system.domain.dto.CreateProductRequest;
 import com.business_control_system.domain.dto.Product;
 import com.business_control_system.domain.dto.UpdateProductRequest;

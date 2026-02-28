@@ -1,7 +1,7 @@
 package com.business_control_system.web.exception;
 
-import com.business_control_system.domain.NotFoundException;
 import com.business_control_system.domain.exception.AlreadyExistsException;
+import com.business_control_system.domain.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
