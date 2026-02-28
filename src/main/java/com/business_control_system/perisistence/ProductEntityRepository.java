@@ -1,9 +1,9 @@
 package com.business_control_system.perisistence;
 
-import com.business_control_system.domain.NotFoundException;
 import com.business_control_system.domain.dto.CreateProductRequest;
 import com.business_control_system.domain.dto.Product;
 import com.business_control_system.domain.dto.UpdateProductRequest;
+import com.business_control_system.domain.exception.NotFoundException;
 import com.business_control_system.domain.repository.ProductRepository;
 import com.business_control_system.perisistence.entity.CategoryEntity;
 import com.business_control_system.perisistence.entity.ProductEntity;
@@ -44,7 +44,7 @@ public class ProductEntityRepository implements ProductRepository {
     @Override
     public Product getById(int id) {
         ProductEntity productEntity = this.productListCrudRepository.findById(id)
-                .orElseThrow(()-> new NotFoundException("Product Not Found"));
+                .orElseThrow(()-> new NotFoundException("Product not found"));
         return this.productMapper.toDTO(productEntity);
     }
 
