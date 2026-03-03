@@ -29,7 +29,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http){
         http
                 .authorizeHttpRequests((authorize)->{ authorize
-                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/auth/login").permitAll()
+                        .requestMatchers("/auth/register").permitAll()
                         .requestMatchers(HttpMethod.GET,"/products/all").permitAll()
                         .requestMatchers(HttpMethod.GET,"/products/get/*").permitAll()
                         .requestMatchers(HttpMethod.GET,"/categories").permitAll()
